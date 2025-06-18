@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,87.5,800;1,87.5,800&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
@@ -40,6 +42,8 @@ nav {
 nav img {
     position: relative;
     z-index: 4;
+    max-width: 150px;
+    height: auto;
 }
 
 .btn {
@@ -52,6 +56,8 @@ nav img {
     border-color: white;
     position: relative;
     z-index: 10;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
 .btn-sm {
@@ -63,6 +69,8 @@ nav img {
     color: white;
     position: relative;
     z-index: 10;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
 .mid {
@@ -79,15 +87,26 @@ nav img {
     position: relative;
     z-index: 10;
     top: 50px;
+    padding: 0 20px;
 }
 
-.mid> :first-child {
+.mid > :first-child {
     font-size: 48px;
     font-weight: 900;
     padding: 13px;
     padding-top: 53px;
     text-align: center;
+    line-height: 1.2;
 }
+
+.email {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
 .email input {
     background-color: rgba(23, 23, 23, 0.808);
     padding: 16px 38px;
@@ -97,6 +116,7 @@ nav img {
     color: white;
     font-size: 16px;
     border: 1px solid rgba(255, 255, 255, 0.822);
+    width: 100%;
 }
 
 .btn-red {
@@ -107,6 +127,8 @@ nav img {
     font-weight: bolder;
     color: white;
     font-size: 18px;
+    cursor: pointer;
+    width: 100%;
 }
 
 .first {
@@ -114,25 +136,35 @@ nav img {
     justify-content: center;
     color: white;
     margin: auto;
-    max-width: 70vw;
+    max-width: 90vw;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
-.sectionimg{
+
+.sectionimg {
     position: relative;
+    flex: 1;
+    min-width: 300px;
 }
-.sectionimg1 img{
-    width: 30vw;
+
+.sectionimg1 img {
+    width: 100%;
+    max-width: 400px;
     position: relative;
     z-index: 10;
-    left: -54px
+    height: auto;
 }
-.sectionimg img{
-width: 30vw;
-position: relative;
-z-index: 10;
-left: 128px
+
+.sectionimg img {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 10;
+    height: auto;
 }
-.sectionimg video{
+
+.sectionimg video {
     z-index: -1;
     overflow: hidden;
     width: 100%;
@@ -142,43 +174,183 @@ left: 128px
     position: absolute;
     top: 21%;
     left: 45%;
+    transform: translateX(-50%);
 }
-section.first>div {
+
+section.first > div {
     display: flex;
     flex-direction: column;
-    padding: 34px 0;
+    padding: 34px 20px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    flex: 1;
+    min-width: 300px;
 }
-section.first>div :nth-child(1) {
+
+section.first > div :nth-child(1) {
     font-size: 48px;
     font-weight: bolder;
+    line-height: 1.2;
 }
 
-
-section.first>div :nth-child(2) {
+section.first > div :nth-child(2) {
     font-size: 24px;
+    line-height: 1.4;
 }
-.faq{
+
+.faq {
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 34px;
-    
+    padding: 34px 20px;
 }
-.faq h2{
+
+.faq h2 {
     text-align: center;
     font-size: 48px;
+    margin-bottom: 30px;
 }
-.faqbox:hover{
+
+.faqbox:hover {
     background-color: rgb(97, 96, 96);
 }
-.faqbox{
-        transition: all 1s ease-out;
+
+.faqbox {
+    transition: all 1s ease-out;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #2d2d2d;
+    padding: 24px;
+    max-width: 90vw;
+    margin: 13px auto;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 10px 15px;
+        height: auto;
+        min-height: 80px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    nav img {
+        max-width: 120px;
+    }
+    
+    .btn, .btn-sm {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    
+    .mid {
+        top: 20px;
+        padding: 0 15px;
+        font-size: 1.2rem;
+    }
+    
+    .mid > :first-child {
+        font-size: 32px;
+        padding-top: 30px;
+    }
+    
+    .email {
+        flex-direction: column;
+        width: 100%;
+        max-width: none;
+    }
+    
+    .email input {
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+    
+    .btn-red {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+    
+    .first {
+        flex-direction: column;
+        max-width: 95vw;
+        gap: 20px;
+    }
+    
+    .sectionimg, .sectionimg1 {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .sectionimg1 img {
+        left: 0;
+        max-width: 100%;
+    }
+    
+    .sectionimg img {
+        left: 0;
+        max-width: 100%;
+    }
+    
+    section.first > div {
+        padding: 20px 15px;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    section.first > div :nth-child(1) {
+        font-size: 28px;
+    }
+    
+    section.first > div :nth-child(2) {
+        font-size: 18px;
+    }
+    
+    .faq {
+        padding: 20px 15px;
+    }
+    
+    .faq h2 {
+        font-size: 32px;
+    }
+    
+    .faqbox {
+        font-size: 18px;
+        padding: 20px 15px;
+        max-width: 95vw;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mid > :first-child {
         font-size: 24px;
-        display: flex;
-        justify-content: space-between;
-        background-color: #2d2d2d;
-        padding: 24px;
-        max-width: 60vw;
-        margin: 13px auto;
-        cursor: pointer;
+    }
+    
+    .mid {
+        font-size: 1rem;
+    }
+    
+    section.first > div :nth-child(1) {
+        font-size: 24px;
+    }
+    
+    section.first > div :nth-child(2) {
+        font-size: 16px;
+    }
+    
+    .faq h2 {
+        font-size: 24px;
+    }
+    
+    .faqbox {
+        font-size: 16px;
+        padding: 15px 10px;
+    }
+    
+    .btn-red {
+        font-size: 14px;
+    }
 }
